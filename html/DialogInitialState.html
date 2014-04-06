@@ -1,0 +1,51 @@
+<div id="initialStateDialog" title="Initial State">
+  <fieldset>
+    <label for="Initial state">Initial State</label>
+    <input type="text" name="initialStateText" id="initialStateText" class="text ui-widget-content ui-corner-all" title="Represent the initial state of the computation. Must be formed only by 1s and 0s" />
+    <div id="initialStateAccordion">
+      <h3 title="Generates a random string">Random</h3>
+      <fieldset>
+        <label for="initialStateRandomLengthSpinBox">Length</label>
+        <input id="initialStateRandomLengthSpinBox" name="initialStateRandomLengthSpinBox" value="100" title="Length of the string"/>
+        <button id="initialStateRandomApplyButton">Apply</button>
+      </fieldset>
+      <h3 title="Random string with specific ratio of 1s">Ratio</h3>
+      <fieldset>
+        <label for="initialStateRatioRatioSpinBox">Ratio</label>
+        <input id="initialStateRatioRatioSpinBox" name="initialStateRatioRatioSpinBox" value="0.5" title="Ratio of 1s"/>
+        <label for="initialStateRatioLengthSpinBox">Length</label>
+        <input id="initialStateRatioLengthSpinBox" name="initialStateRatioLengthSpinBox" value="100" title="Length of the string"/>
+        <button id="initialStateRatioApplyButton">Apply</button>
+      </fieldset>
+      <h3 title="Repeat the initial string a specific number of times (010 => 010010...010)">Repeat</h3>
+      <fieldset>
+        <label for="initialStateRepeatTimesSpinBox">Times</label>
+        <input id="initialStateRepeatTimesSpinBox" name="initialStateRepeatTimesSpinBox" value="10" title="Number of times to repeat the string"/>
+        <button id="initialStateRepeatApplyButton">Apply</button>
+      </fieldset>
+      <h3 title="Overwrite some section of the initial string">Overwrite</h3>
+      <fieldset>
+        <label for="initialStateOverwriteText">String</label>
+        <input id="initialStateOverwriteText" name="initialStateOverwriteText" value="110" class="text ui-widget-content ui-corner-all" title="String to write in the initial string"/>
+        <label for="initialStateOverwriteAlignRadio">Align</label>
+        <div id="initialStateOverwriteAlignRadio" title="Align of the string to write.">
+          <input type="radio" id="initialStateOverwriteAlignLeft" name="initialStateOverwriteAlignRadio" /><label for="initialStateOverwriteAlignLeft">Left</label>
+          <input type="radio" id="initialStateOverwriteAlignCenter" name="initialStateOverwriteAlignRadio" checked="checked" /><label for="initialStateOverwriteAlignCenter">Center</label>
+          <input type="radio" id="initialStateOverwriteAlignRight" name="initialStateOverwriteAlignRadio" /><label for="initialStateOverwriteAlignRight">Right</label>
+        </div>
+        <button id="initialStateOverwriteApplyButton">Apply</button>
+      </fieldset>
+      <h3 title="Expand each character of the initial string a specific number of times (0101 => 000111000111)">Scale</h3>
+      <fieldset>
+        <label for="initialStateScaleTimesSpinBox">Times</label>
+        <input id="initialStateScaleTimesSpinBox" name="initialStateScaleTimesSpinBox" value="4" title="Number of times to scale each character"/>
+        <button id="initialStateScaleApplyButton">Apply</button>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>
+<div id="initialStateResumeDialog" title="Resume">
+  <label for="Initial state">Initial State</label>
+  <div id="initialStateResumeText"></div>
+</div>
+<script type="text/javascript" src="js/DialogInitialState.js"></script>

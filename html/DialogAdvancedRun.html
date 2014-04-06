@@ -1,0 +1,18 @@
+<div id="advancedRunDialog" title="Advanced Run">
+  <fieldset>
+    <label for="advancedRunInitText">Initialization</label>
+    <textarea name="advancedRunInitText" id="advancedRunInitText" class="scriptText" title="Initialization routine and global variables">var i = 1;
+var base = BinaryString.repeat("0", 250);</textarea>
+    <label for="advancedRunCodeText">Code</label>
+    <textarea name="advancedRunCodeText" id="advancedRunCodeText" class="scriptText" title="The code that runs in each iteration" >var over = BinaryString.repeat("1", i);
+var string = BinaryString.overwriteCenter(base, over);
+caController.setInitialState(string);
+caController.run(90,100);
+i += 2;</textarea>
+    <label for="advancedRunPeriodSpinBox">Period</label>
+    <input name="advancedRunPeriodSpinBox" id="advancedRunPeriodSpinBox" value="500" title="How many milliseconds waits each iteration for the next one. Larger values are recommended for heavy computations"/>
+    <label for="advancedRunIterationsSpinBox">Iterations</label>
+    <input name="advancedRunIterationsSpinBox" id="advancedRunIterationsSpinBox" value="50" title="Number of iterations that the code will run"/>
+  </fieldset>
+</div>
+<script type="text/javascript" src="js/DialogAdvancedRun.js"></script>
