@@ -8,7 +8,7 @@ Cellular automata analysis tool
 
 ##Screenshot
 <p align="center">
-  <img src="https://raw.githubusercontent.com/edwrodrig/canal-web/master/img/sshot.png" alt="Screenshot"/>
+  <img src="https://raw.githubusercontent.com/edwrodrig/canal-web/gh-pages/img/sshot.png" alt="Screenshot"/>
 </p>
 
 ##Usage
@@ -18,4 +18,4 @@ Just download and open *ca.html* in a browser. You may need to *allow file acces
 Feel free to fork and pull requests. If you find a error you're welcome to fix it. I'm not a web compatibility enthusiast so I think there are many cross-browser issues and unhandled errors.
 
 ##License
-**Canal-web** is licensed under the [MIT License](https://github.com/edwrodrig/canal-web/blob/master/LICENSE).
+**Canal-web** is licensed under the [MIT License](https://github.com/edwrodrig/canal-web/blob/gh-pages/LICENSE).
