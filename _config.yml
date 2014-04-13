@@ -1,0 +1,15 @@
+﻿title: Canal Web
+tagline: Cellular automata analysis tool
+description: Canal is a web based cellular automata analysis tool. You can set your initial state and run any of the ECA rules on it. There are more options that extends the possibilities of analysis and simulations.
+keywords: cellular automata elementary html5 eca
+image:
+  src: "http://edwrodrig.github.io/canal-web/img/meta-image.gif"
+  width: 640
+  height: 480
+author:
+  name: "Edwin Rodríguez"
+  url: "http://edwrodrig.github.io"
+  github: edwrodrig
+production_url: "http://edwrodrig.github.io/canal-web/"
+google_tracking_id: "UA-49580762-3"
+markdown: kramdown

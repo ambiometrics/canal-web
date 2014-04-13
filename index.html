@@ -1,0 +1,110 @@
+---
+layout: default
+overview: true
+---
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<div id="header" class="section">
+  <h1 class="title">{{ site.title }}</h1>
+  <p class="title">{{ site.tagline }}</p>
+</div>
+<div id="buttons">
+<button id="initialStateDialogButton" title="Set the initial state for the computation">Initial State</button>
+<div id="runButtonSet">
+<button id="runButton" title="Run! You need to set a initial state first">Run</button>
+<button id="runOptionsDialogButton" title="Run options">Options</button>
+</div>
+<div class="toolbarLabel">Rule:</div>
+<input id="ruleNumber" name="ruleNumber" value="110" title="ECA rule to run"/>
+<div class="toolbarLabel">Iterations:</div>
+<input id="iterations" name="iterations" value="100" title="How many times the rule will run"/>
+<button id="advancedRunDialogButton" title="Advanced run features">Advanced Run</button>
+<button id="preferencesDialogButton" title="Preferences">Preferences</button>
+</div>
+<div id="canvasViewport"></div>
+<div id="footer" class="section">
+  <div class="left-block two-thirds">
+    <p>Copyright © 2014 by <a href="{{ site.author.url }}" title="My homepage">{{ site.author.name }}</a> under the <a title="See full text" href="https://github.com/{{ site.author.github }}/canal-web/blob/gh-pages/LICENSE">MIT License</a></p>
+  </div>
+  <div id="share" class="left-block one-third">
+    <p>Share on
+	  <!-- Facebook like button -->
+      <a class="social facebook" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url | UrlEncode }}"
+	    onclick="window.open(this.href, 'name', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
+      <!-- Twitter share button -->
+      <a class="social twitter" title="Share on Tweeter" href="https://twitter.com/share?url={{ site.production_url | UrlEncode }}"
+	    onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
+      <!-- Google Plus button -->
+      <a class="social google-plus" title="Share on Google Plus" href="https://plus.google.com/share?url={{ site.production_url | UrlEncode }}"
+	    onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
+    </p>
+  </div>
+</div>
+<article id="initialStateDialogHTML"></article>
+<article id="runOptionsDialogHTML"></article>
+<article id="advancedRunDialogHTML"></article>
+<article id="preferencesDialogHTML"></article>
+<script src="js/AnimationManager.js"></script>
+<script src="js/BinaryString.js"></script>
+<script src="js/CellArray.js"></script>
+<script src="js/CaChanger.js"></script>
+<script src="js/CaChangerBasic.js"></script>
+<script src="js/CaChangerMajority.js"></script>
+<script src="js/CaChangerRange.js"></script>
+<script src="js/CaController.js"></script>
+<script src="js/CaModel.js"></script>
+<script src="js/CaView.js"></script>
+<script src="js/CellWorld.js"></script>
+<script src="js/Rule.js"></script>
+<script>
+var container = document.getElementById("canvasViewport");
+var caController = new CaController(container, 4);
+
+function resizeViewport() {
+  var height = window.innerHeight - $("#header").outerHeight() - $("#footer").outerHeight() - $("#buttons").height();
+  $("#canvasViewport").height(height + "px");
+}
+
+$(function() {
+
+  $("#initialStateDialogHTML").load("html/DialogInitialState.html");
+  $("#runOptionsDialogHTML").load("html/DialogRunOptions.html");
+  $("#advancedRunDialogHTML").load("html/DialogAdvancedRun.html");
+  $("#preferencesDialogHTML").load("html/DialogPreferences.html");
+  
+  $("#initialStateDialogButton")
+    .button({ text: false, icons: { primary: "ui-icon-document" }})
+    .click(function() { $("#initialStateDialog").dialog("open"); });
+
+  $("#runButton")
+    .button({ icons: { primary: "ui-icon-play" }})
+    .click(function() {
+      var iterations = parseInt($("#iterations").val());
+      var ruleNumber = parseInt($("#ruleNumber").val());
+      caController.run(ruleNumber, iterations);
+  });
+
+  $("#runOptionsDialogButton")
+    .button({ text: false, icons: { primary: "ui-icon-triangle-1-s" }})
+    .click(function() { $("#runOptionsDialog").dialog("open"); });
+
+  $("#runButtonSet").buttonset({ items: "button" });
+  
+  $("#advancedRunDialogButton")
+    .button({ text: false, icons: { primary: "ui-icon-wrench" }})
+    .click(function() { $("#advancedRunDialog").dialog("open"); });
+
+  $("#preferencesDialogButton")
+    .button({ text: false, icons: { primary: "ui-icon-gear" }})
+    .click(function() { $("#preferencesDialog").dialog("open"); });
+
+  $("#ruleNumber").spinner({ min: 0, numberFormat: "d" });
+  $("#iterations").spinner({ max: 999, min: 1, numberFormat: "d" });
+ 
+  $(window).resize(resizeViewport);
+  resizeViewport();
+
+  $(document).tooltip().off("focusin focusout");
+});
+</script>

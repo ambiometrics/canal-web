@@ -1,0 +1,25 @@
+<div id="runOptionsDialog" title="Run options">
+  <fieldset>
+    <div id="runOptionsAccordion">
+      <h3 title="Elementary cellular automata">Basic</h3>
+      <fieldset>
+        <button id="runOptionsBasicRunnerApplyButton">Apply</button>
+      </fieldset>
+      <h3 title="Majority problem cellular automata">Majority</h3>
+      <fieldset>
+        <label for="runOptionsMemoryMajorityRunnerRatioSpinBox">Ratio</label>
+        <input id="runOptionsMemoryMajorityRunnerRatioSpinBox" name="runOptionsMemoryMajorityRunnerRatioSpinBox" value="0.5" title="Defines the ratio of ones needed to set a one"/>
+        <label for="runOptionsMemoryMajorityRunnerRowsSpinBox">Rows</label>
+        <input id="runOptionsMemoryMajorityRunnerRowsSpinBox" name="runOptionsMemoryMajorityRunnerRowsSpinBox" value="4" title="How many rows are considered in majority calculation. N rows means that the last N rows are considered"/>
+        <button id="runOptionsMemoryMajorityRunnerApplyButton">Apply</button>
+      </fieldset>
+      <h3 title="Elementary cellular automata with range">Range</h3>
+      <fieldset>
+        <label for="runOptionsRangeRunnerRangeSpinBox">Range</label>
+        <input id="runOptionsRangeRunnerRangeSpinBox" name="runOptionsRangeRunnerRangeSpinBox" value="4" title="The radius of the vecinity"/>
+        <button id="runOptionsRangeRunnerApplyButton">Apply</button>
+      </fieldset>
+    </div>
+  </fieldset>
+</div>
+<script type="text/javascript" src="js/DialogRunOptions.js"></script>
