@@ -1,53 +1,87 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<title>Canal Web</title>
-<!-- Update your html tag to include the itemscope and itemtype attributes. -->
-<html itemscope itemtype="http://schema.org/WebApplication">
 
+   
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Canal Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google data-->
 <meta name="description" content="Canal is a web based cellular automata analysis tool. You can set your initial state and run any of the ECA rules on it. There are more options that extends the possibilities of analysis and simulations." />
-
-<!-- Google data-->
-<meta name="description" content="Canal is a web based cellular automata analysis tool. You can set your initial state and run any of the ECA rules on it. There are more options that extends the possibilities of analysis and simulations." />
-<meta name="keywords" content="cellular automata elementary html5 eca" />
-
 <meta name="author" content="Edwin Rodríguez" />
-<meta name="application-name" content="Canal Web" />
 
 <!-- Google+ data -->
-<meta itemprop="name" content="Canal Web">
-<meta itemprop="description" content="Canal is a web based cellular automata analysis tool. You can set your initial state and run any of the ECA rules on it. There are more options that extends the possibilities of analysis and simulations.">
-<meta itemprop="image" content="http://edwrodrig.github.io/canal-web/img/meta-image.gif">
+<meta itemprop="name" content="Canal Web" />
+<meta itemprop="description" content="Canal is a web based cellular automata analysis tool. You can set your initial state and run any of the ECA rules on it. There are more options that extends the possibilities of analysis and simulations." />
+
+<meta itemprop="image" content="/img/meta-image.gif">
+
 
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Canal Web" />
 <meta name="twitter:description" content="Canal is a web based cellular automata analysis tool. You can set your initial state and run any of the ECA rules on it. There are more options that extends the possibilities of analysis and simulations." />
-<meta name="twitter:creator" content="" />
-<meta name="twitter:image:src" content="http://edwrodrig.github.io/canal-web/img/meta-image.gif" />
-<meta name="twitter:image:width" content="640" />
-<meta name="twitter:image:height" content="480" />
+
+<meta name="twitter:creator" content="@edwrodrig" />
+
+
+<meta name="twitter:image:src" content="/img/meta-image.gif">
+
 
 <!-- Open Graph data -->
 <meta property="og:title" content="Canal Web" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://edwrodrig.github.io/canal-web/" />
-<meta property="og:image" content="http://edwrodrig.github.io/canal-web/img/meta-image.gif" />
-<meta property="og:image:width" content="640" />
-<meta property="og:image:height" content="480" />
-
+<meta property="og:url" content="" />
 <meta property="og:description" content="Canal is a web based cellular automata analysis tool. You can set your initial state and run any of the ECA rules on it. There are more options that extends the possibilities of analysis and simulations." />
 
-<link rel="stylesheet" type="text/css" href="style/style.css"/>
-<link rel="shortcut icon" href="img/favicon.png"/>
+<meta property="og:image" content="/img/meta-image.gif">
 
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/base/style.css?body=1" media="all">
+  <link rel="stylesheet" href="/css/style.css?body=1" media="all">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<div id="header" class="section">
-  <h1 class="title">Canal Web</h1>
-  <p class="title">Cellular automata analysis tool</p>
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed" />
+  <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed" />
+  <link href="/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap"  />
+  <link href="/dublin.rdf" type="application/rdf+xml" rel="meta" title="Dublin" />
+</head>
+<body>
+  <nav id="header" class="navbar navbar-default navbar-fullscreen-header-footer" role="navigation">
+  <div class="container-fluid">
+<div class="navbar-header">
+  <a class="navbar-brand" href="/"><strong>Canal Web</strong></a>
+  
+  <p class="navbar-text">Cellular automata analysis tool</p>
+  
 </div>
-<div id="buttons">
+  </div>
+</nav>
+  <div  role="main">
+    <div id="buttons">
 <button id="initialStateDialogButton" title="Set the initial state for the computation">Initial State</button>
 <div id="runButtonSet">
 <button id="runButton" title="Run! You need to set a initial state first">Run</button>
@@ -61,24 +95,6 @@
 <button id="preferencesDialogButton" title="Preferences">Preferences</button>
 </div>
 <div id="canvasViewport"></div>
-<div id="footer" class="section">
-  <div class="left-block two-thirds">
-    <p>Copyright © 2014 by <a href="http://edwrodrig.github.io" title="My homepage">Edwin Rodríguez</a> under the <a title="See full text" href="https://github.com/edwrodrig/canal-web/blob/gh-pages/LICENSE">MIT License</a></p>
-  </div>
-  <div id="share" class="left-block one-third">
-    <p>Share on
-	  <!-- Facebook like button -->
-      <a class="social facebook" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://edwrodrig.github.io/canal-web/"
-	    onclick="window.open(this.href, 'name', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
-      <!-- Twitter share button -->
-      <a class="social twitter" title="Share on Tweeter" href="https://twitter.com/share?url=http://edwrodrig.github.io/canal-web/"
-	    onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
-      <!-- Google Plus button -->
-      <a class="social google-plus" title="Share on Google Plus" href="https://plus.google.com/share?url=http://edwrodrig.github.io/canal-web/"
-	    onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
-    </p>
-  </div>
-</div>
 <article id="initialStateDialogHTML"></article>
 <article id="runOptionsDialogHTML"></article>
 <article id="advancedRunDialogHTML"></article>
@@ -105,7 +121,6 @@ function resizeViewport() {
 }
 
 $(function() {
-
   $("#initialStateDialogHTML").load("html/DialogInitialState.html");
   $("#runOptionsDialogHTML").load("html/DialogRunOptions.html");
   $("#advancedRunDialogHTML").load("html/DialogAdvancedRun.html");
@@ -147,6 +162,65 @@ $(function() {
 });
 </script>
 
-<!-- Google Analytics-->
+  </div>
+  <div id="footer" class="container-fluid footer-fullscreen-header-footer">
+  
+  <div class="col-xs-8">
+    <p>&copy; 2014 <a title="Author homepage" href="http://edwrodrig.github.io">Edwin Rodríguez</a>, <a title="See full text" href="https://github.com/edwrodrig/canal-web/blob/gh-pages/LICENSE">MIT License</a></p>
+  </div>
+  <div class="col-xs-4">
+    
+<p class="text-right">
+  Share on
+  
+    
+    
+<a class="social facebook" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=/index.html"
+  onclick="window.open(this.href, 'name', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
 
+  
+    
+    
+<a class="social twitter" title="Share on Twitter" href="https://twitter.com/share?url=/index.html"
+  onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
+    
+  
+    
+    
+<a class="social google-plus" title="Share on Google Plus" href="https://plus.google.com/share?url=/index.html"
+  onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
+
+  
+    
+    
+
+<a class="social pinterest" title="Pin on Pinterest" href="http://www.pinterest.com/pin/create/button/?url=/index.html&media=/img/meta-image.gif&description=Canal Web - Canal is a web based cellular automata analysis tool. You can set your initial state and run any of the ECA rules on it. There are more options that extends the possibilities of analysis and simulations."
+  onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
+
+
+  
+    
+    
+
+<a class="social github" title="Fork on Github" href="https://github.com/edwrodrig/canal-web"></a>
+
+
+  
+</p>
+
+  </div>
+</div>
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49580762-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
 

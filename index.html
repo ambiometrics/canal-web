@@ -1,14 +1,7 @@
 ---
 layout: default
-overview: true
+style: fullscreen-header-footer
 ---
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<div id="header" class="section">
-  <h1 class="title">{{ site.title }}</h1>
-  <p class="title">{{ site.tagline }}</p>
-</div>
 <div id="buttons">
 <button id="initialStateDialogButton" title="Set the initial state for the computation">Initial State</button>
 <div id="runButtonSet">
@@ -23,24 +16,6 @@ overview: true
 <button id="preferencesDialogButton" title="Preferences">Preferences</button>
 </div>
 <div id="canvasViewport"></div>
-<div id="footer" class="section">
-  <div class="left-block two-thirds">
-    <p>Copyright © 2014 by <a href="{{ site.author.url }}" title="My homepage">{{ site.author.name }}</a> under the <a title="See full text" href="https://github.com/{{ site.author.github }}/canal-web/blob/gh-pages/LICENSE">MIT License</a></p>
-  </div>
-  <div id="share" class="left-block one-third">
-    <p>Share on
-	  <!-- Facebook like button -->
-      <a class="social facebook" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url | UrlEncode }}"
-	    onclick="window.open(this.href, 'name', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
-      <!-- Twitter share button -->
-      <a class="social twitter" title="Share on Twitter" href="https://twitter.com/share?url={{ site.production_url | UrlEncode }}"
-	    onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
-      <!-- Google Plus button -->
-      <a class="social google-plus" title="Share on Google Plus" href="https://plus.google.com/share?url={{ site.production_url | UrlEncode }}"
-	    onclick="javascript:window.open(this.href, '', 'location=no,status=no,menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
-    </p>
-  </div>
-</div>
 <article id="initialStateDialogHTML"></article>
 <article id="runOptionsDialogHTML"></article>
 <article id="advancedRunDialogHTML"></article>
@@ -67,7 +42,6 @@ function resizeViewport() {
 }
 
 $(function() {
-
   $("#initialStateDialogHTML").load("html/DialogInitialState.html");
   $("#runOptionsDialogHTML").load("html/DialogRunOptions.html");
   $("#advancedRunDialogHTML").load("html/DialogAdvancedRun.html");

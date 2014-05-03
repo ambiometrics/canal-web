@@ -1,6 +1,26 @@
-{% include top.html %}
-
-{{ content }}
-
-{% include analytics.html %}
+<!DOCTYPE html>
+{% include base/setup %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include base/meta %}
+  {% include base/libs %}
+  <link rel="stylesheet" href="{{ base_path }}/css/base/style.css?body=1" media="all">
+  {% include header %}
+  <link href="{{ base_path }}/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed" />
+  <link href="{{ base_path }}/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed" />
+  <link href="{{ base_path }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap"  />
+  <link href="{{ base_path }}/dublin.rdf" type="application/rdf+xml" rel="meta" title="Dublin" />
+</head>
+<body>
+  {% include navbar %}
+  <div {% if page.style != "fullscreen-header-footer" %}class="{{ container_class }}" {% endif %} role="main">
+    {{ content }}
+  </div>
+  {% include base/footer %}
+  {% include base/analytics %}
+</body>
+</html>
 

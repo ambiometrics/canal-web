@@ -1,0 +1,8 @@
+{% include base/navbar_begin %}
+<div class="navbar-header">
+  <a class="navbar-brand" href="{{ base_path }}/"><strong>{{ site.title }}</strong></a>
+  {% if site.tagline %}
+  <p class="navbar-text">{{ site.tagline }}</p>
+  {% endif %}
+</div>
+{% include base/navbar_end %}
