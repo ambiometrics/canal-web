@@ -2,7 +2,6 @@
 
 exclude: ["README.md"]
 pygments: true
-debug: true
 
 title: "Canal Web"
 tagline: "Cellular automata analysis tool"
