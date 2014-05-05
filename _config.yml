@@ -27,7 +27,7 @@ type:
     branch: "gh-pages"
 
 sharing:
-  style: "square"
+  style: "native"
   services:
     - "facebook"
     - "twitter"
