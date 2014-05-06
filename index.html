@@ -37,7 +37,7 @@ var container = document.getElementById("canvasViewport");
 var caController = new CaController(container, 4);
 
 function resizeViewport() {
-  var height = window.innerHeight - $("#header").outerHeight() - $("#footer").outerHeight() - $("#buttons").height();
+  var height = window.innerHeight - $("#header").outerHeight() - $("#footer").outerHeight() - $("#buttons").outerHeight();
   $("#canvasViewport").height(height + "px");
 }
 
