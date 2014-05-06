@@ -25,17 +25,8 @@ display: inline-block;
 }
 
 canvas.canvasScene { display: inline-block; }
-div#buttons { width: 100%; margin-top: 5px ; margin-bottom: 5px; }
+div#buttons { width: 100%; }
 div#canvasViewport { background-color: #EEE; overflow: auto; width: 100%; text-align: center; font-size: 0em;}
-#footer:after {
-  clear: both;
-  content: "";
-  display: block;
-  font-size: 0;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
 
 div#runButtonSet {  display: inline-block; } 
 div.black
